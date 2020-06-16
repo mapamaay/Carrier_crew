@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Prefabs/Player/Input System/PlayerControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Prefabs/Prefabs_L_Tom/Player/Input System/PlayerControls.inputactions'
 
 using System;
 using System.Collections;
