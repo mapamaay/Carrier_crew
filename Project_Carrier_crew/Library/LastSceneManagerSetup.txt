@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Scene_A_Malo.unity
+- path: Assets/Scenes/Scene_L_R.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
