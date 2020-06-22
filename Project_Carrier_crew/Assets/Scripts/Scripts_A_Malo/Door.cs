@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
 
     public Door_event DoorEvent;
 
+    Collider Door_collider;
 
     // Start is called before the first frame update
     void Start()
@@ -15,26 +16,24 @@ public class Door : MonoBehaviour
         DoorEvent.OnDoorExit += DoorEvent_OnDoorExit;
     }
 
-    
+    // Update is called once per frame
+    void Update()
+    {
+
+    }   
+
 
     private void DoorEvent_OnDoorEnter(Collider obj)
     {
-        throw new System.NotImplementedException();
+        
     }
 
 
 
     private void DoorEvent_OnDoorExit(Collider obj)
     {
-        throw new System.NotImplementedException();
+       
     }
 
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
