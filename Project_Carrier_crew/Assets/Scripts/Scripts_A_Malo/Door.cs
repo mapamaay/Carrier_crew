@@ -5,30 +5,25 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private Collider Door_collider;
+    private GameObject Player;
+    private Collider Player_collider;
 
     private void Start()
     {
         Door_collider = GetComponent<Collider>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Player_collider = Player.GetComponent<Collider>();
+
+        Debug.Log("Variables!");
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision col)
     {
+        Debug.Log("Impact");
 
-        if (other.gameObject.CompareTag("Player"))
+        if (col.gameObject.tag == "Player")
         {
-            Door_collider.enabled = !Door_collider.enabled;
-            Debug.Log("Collider.enabled=" + Door_collider.enabled);
-        }
-            
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Door_collider.enabled = Door_collider.enabled;
-            Debug.Log("Collider.enabled=" + Door_collider.enabled);
+            Physics.IgnoreCollision(Player_collider, Door_collider);
         }
 
     }
