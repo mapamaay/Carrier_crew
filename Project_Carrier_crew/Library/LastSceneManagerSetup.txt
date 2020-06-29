@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Sce_L_Romain.unity
-=======
-- path: Assets/Scenes/Sce_A_Malo.unity
->>>>>>> master
   isLoaded: 1
   isActive: 1
   isSubScene: 0
