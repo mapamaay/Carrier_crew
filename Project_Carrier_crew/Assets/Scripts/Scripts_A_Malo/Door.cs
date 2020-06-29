@@ -4,36 +4,28 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    private Collider Door_collider;
+    private GameObject Player;
+    private Collider Player_collider;
 
-    public Door_event DoorEvent;
-
-    Collider Door_collider;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        DoorEvent.OnDoorEnter += DoorEvent_OnDoorEnter;
-        DoorEvent.OnDoorExit += DoorEvent_OnDoorExit;
+        Door_collider = GetComponent<Collider>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Player_collider = Player.GetComponent<Collider>();
+
+        Debug.Log("Variables!");
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision col)
     {
+        Debug.Log("Impact");
 
-    }   
+        if (col.gameObject.tag == "Player")
+        {
+            Physics.IgnoreCollision(Player_collider, Door_collider);
+        }
 
-
-    private void DoorEvent_OnDoorEnter(Collider obj)
-    {
-        
     }
-
-
-
-    private void DoorEvent_OnDoorExit(Collider obj)
-    {
-       
-    }
-
-
 }
+
