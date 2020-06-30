@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door_p2 : MonoBehaviour
 {
     private Collider Door_collider;
     private GameObject Player;
@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     private void Start()
     {
         Door_collider = GetComponent<Collider>();
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Player = GameObject.FindGameObjectWithTag("Player2");
         Player_collider = Player.GetComponent<Collider>();
 
         Debug.Log("Variables!");
@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
     {
         Debug.Log("Impact");
 
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player2")
         {
             Physics.IgnoreCollision(Player_collider, Door_collider);
         }
